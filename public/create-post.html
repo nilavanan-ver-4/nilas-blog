@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .content1 {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px solid ;
+            box-shadow: 0 2px 5px rgba(17, 16, 16, 0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 30px;
+        }
+        label {
+            padding-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #7e3d3d;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 20px;
+            
+            border: none;
+            text-align: center;
+            align-items: center;
+            border-radius: 5px;
+            border: 0.5px solid red;
+            background-color: #eff7f0;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            
+        }
+        button:hover {
+            background-color: #8bee09;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+             <section>
+               
+                    <header class="major">
+                        <h2>Create Blog</h2>
+                    </header>
+                 
+                    </section>
+                        
+               
+            
+            
+        </div>
+    </div>
+
+    <div class="content1">
+        <form id="create-post-form">
+            <div class="form-group1">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group1">
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" rows="10" required></textarea>
+            </div>
+            <button type="submit" class="btn1">Submit</button>
+        </form>
+        <div id="success-message" style="display: none;">
+            Post submitted successfully!
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('create-post-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+
+            try {
+                const response = await fetch('http://localhost:8000/submit-post', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ title, content })
+                });
+
+                if (response.ok) {
+                    form.reset();
+                    successMessage.style.display = 'block';
+                } else {
+                    throw new Error('Failed to submit post');
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Error submitting post');
+            }
+        });
+    });
+</script>
+            </div>
+    </div>
+</body>
+</html>

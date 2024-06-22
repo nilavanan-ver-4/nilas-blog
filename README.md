@@ -104,7 +104,7 @@ Retrieve all blog posts.
     "content": "Post content goes here.",
     "__v": 0
   },
-  ...
+  
 ]
 ```
 
@@ -173,7 +173,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Feel free to modify this README file to better fit your project and any additional details you may want to include.
-```
 
-You can copy and paste the above content into your `README.md` file in your project's root directory. This will provide a comprehensive guide for anyone who wants to understand, set up, and use your project.

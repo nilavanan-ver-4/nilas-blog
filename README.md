@@ -6,7 +6,7 @@ This is a simple blog application built using Node.js, Express, MongoDB, and HTM
 ## Project Structure
 
 ```
-project_root/
+blog-application/
 ├── node_modules/
 ├── public/
 │   ├── signup.html

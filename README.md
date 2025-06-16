@@ -11,8 +11,10 @@ blog-application/
 ├── public/
 │   ├── signup.html
 │   ├── login.html
-│   ├── posts.html
-│   └── other_assets...
+│   ├── create-post.html
+│   └── index.html
+│   ├── blog.html
+│   └── about.html
 ├── server.js
 └── package.json
 ```
